@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file keeps track of upgrades to the course_report block
+ * This file keeps track of upgrades to the custom_reports block
  *
  * @since Moodle 3.1
- * @package block_course_report
+ * @package block_custom_reports
  * @copyright 2017 Ian Wild
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,11 +26,11 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Upgrade code for the course_report block.
+ * Upgrade code for the custom_reports block.
  *
  * @param int $oldversion
  */
-function xmldb_block_course_report_upgrade($oldversion) {
+function xmldb_block_custom_reports_upgrade($oldversion) {
     global $CFG;
 
     // Moodle v2.8.0 release upgrade line.

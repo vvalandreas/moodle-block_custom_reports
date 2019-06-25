@@ -20,10 +20,10 @@
  * @param  $replace
  * @return void
  */
-function block_course_report_global_db_replace($search, $replace) {
+function block_custom_reports_global_db_replace($search, $replace) {
     global $DB;
 
-    $instances = $DB->get_recordset('block_instances', array('blockname' => 'course_report'));
+    $instances = $DB->get_recordset('block_instances', array('blockname' => 'custom_reports'));
     foreach ($instances as $instance) {
         // TODO: currently nothing to do!
     }

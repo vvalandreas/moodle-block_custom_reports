@@ -15,19 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'block_course_report', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'block_custom_reports', language 'en', branch 'MOODLE_20_STABLE'
  *
- * @package   block_course_report
+ * @package   block_custom_reports
  * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['html:addinstance'] = 'Add a new Course Report block';
-$string['html:myaddinstance'] = 'Add a new Course Report block to Dashboard';
-$string['defaulttitle'] = 'Course report';
-$string['pluginname'] = 'Course report';
+$string['html:addinstance'] = 'Add a new Custom reports block';
+$string['html:myaddinstance'] = 'Add a new Custom reports block to Dashboard';
+$string['defaulttitle'] = 'Custom reports';
+$string['pluginname'] = 'Custom reports';
 $string['allowadditionalcssclasses'] = 'Allow additional CSS classes';
-$string['configallowadditionalcssclasses'] = 'Adds a configuration option to Course Report block instances allowing additional CSS classes to be set.';
+$string['configallowadditionalcssclasses'] = 'Adds a configuration option to Custom reports block instances allowing additional CSS classes to be set.';
 $string['bubblechart'] = 'Activity bubble chart';
 $string['unknownmod'] = 'Module not recognised';
 $string['returntocourse'] = 'Return to course';

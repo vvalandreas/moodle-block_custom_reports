@@ -15,15 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Course report
- * A Moodle block to show course reports - firstly a bubble chart
+ * Custom reports
+ * A Moodle block to show Custom reportss - firstly a bubble chart
  * @package blocks
  * @author: Ian Wild
  * @date: 2017
  */
 
 require_once("../../config.php");
-require_once($CFG->dirroot."/blocks/course_report/locallib.php");
+require_once($CFG->dirroot."/blocks/custom_reports/locallib.php");
 
 $id = required_param('id', PARAM_INT);
 
@@ -41,20 +41,20 @@ if ($course->id == SITEID) {
 
 $PAGE->set_context($context);
 $PAGE->set_pagelayout('incourse');
-$PAGE->set_url('/blocks/course_report/viewreport.php', ['id' => $id]);
+$PAGE->set_url('/blocks/custom_reports/viewreport.php', ['id' => $id]);
 
-$reportname = get_string('bubblechart', 'block_course_report');
+$reportname = get_string('bubblechart', 'block_custom_reports');
 
 $PAGE->set_title($reportname);
 $PAGE->set_heading($reportname);
 $PAGE->set_cacheable( true);
 
-$PAGE->requires->js('/blocks/course_report/thirdparty/d3.js', true);
+$PAGE->requires->js('/blocks/custom_reports/thirdparty/d3.js', true);
 
 echo $OUTPUT->header();
 
 // get the relevant interaction data
-$data = course_report_get_views($course->id);
+$data = custom_reports_get_views($course->id);
 
 if(isset($data[0])) {
 	if($data[0] != CR_SUCCESS) {
@@ -62,7 +62,7 @@ if(isset($data[0])) {
 	} else {
 		if(isset($data[1])) {
 		
-			$renderer = $PAGE->get_renderer('block_course_report');
+			$renderer = $PAGE->get_renderer('block_custom_reports');
 			
 			// echo 'return to course' button above and below the chart
 			echo $renderer->get_report_exit_btn($course->id);
@@ -92,7 +92,7 @@ if(isset($data[0])) {
 			
 			$js_params = array('graph', $json_data);
 			
-			$PAGE->requires->js_call_amd('block_course_report/chart_renderer', 'drawChart', $js_params);
+			$PAGE->requires->js_call_amd('block_custom_reports/chart_renderer', 'drawChart', $js_params);
 			
 		} else {
 			// TODO: output a suitable message

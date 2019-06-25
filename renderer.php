@@ -21,13 +21,13 @@
 ///////////////////////////////////////////////////////////////////////////
 
 /**
- * Block course report renderer.
- * @package   block_course_report
+ * Block Custom reports renderer.
+ * @package   block_custom_reports
  * @copyright 2017 Moodle Pty Ltd (http://moodle.com)
  * @author    Ian Wild
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class block_course_report_renderer extends plugin_renderer_base {
+class block_custom_reports_renderer extends plugin_renderer_base {
 
     
     /**
@@ -38,9 +38,9 @@ class block_course_report_renderer extends plugin_renderer_base {
     public function get_report_link($courseid) {
     	global $CFG;
     	
-    	$url = new moodle_url($CFG->wwwroot.'/blocks/course_report/viewreport.php', array('id'=>$courseid));
+    	$url = new moodle_url($CFG->wwwroot.'/blocks/custom_reports/viewreport.php', array('id'=>$courseid));
     	
-    	$linkString = get_string('bubblechart', 'block_course_report');
+    	$linkString = get_string('bubblechart', 'block_custom_reports');
     	
     	$html = html_writer::link($url, $linkString, array('class' => 'button report_link'));
         
@@ -57,7 +57,7 @@ class block_course_report_renderer extends plugin_renderer_base {
     	global $CFG;
     		
     	$link = new moodle_url($CFG->wwwroot.'/course/view.php?id='.$courseid);
-    	$buttonString = get_string('returntocourse', 'block_course_report');
+    	$buttonString = get_string('returntocourse', 'block_custom_reports');
     	$button = new single_button($link, $buttonString, 'get');
     	$button->class = 'tablebutton';
     		

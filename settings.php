@@ -15,27 +15,27 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Settings for the course_report block
+ * Settings for the custom_reports block
  *
  * @copyright 2017 Ian Wiild
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @package   block_course_report
+ * @package   block_custom_reports
  */
 
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-    $settings->add(new admin_setting_configcheckbox('block_course_report_allowcssclasses', get_string('allowadditionalcssclasses', 'block_course_report'),
-                       get_string('configallowadditionalcssclasses', 'block_course_report'), 0));
+    $settings->add(new admin_setting_configcheckbox('block_custom_reports_allowcssclasses', get_string('allowadditionalcssclasses', 'block_custom_reports'),
+                       get_string('configallowadditionalcssclasses', 'block_custom_reports'), 0));
     
     // Starting time of log queries.
     $options = array(
-    		'sincestart' => get_string('sincestart', 'block_course_report'),
-    		'sinceforever' => get_string('sinceforever', 'block_course_report'),
+    		'sincestart' => get_string('sincestart', 'block_custom_reports'),
+    		'sinceforever' => get_string('sinceforever', 'block_custom_reports'),
     );
-    $settings->add(new admin_setting_configselect('block_course_report/activitysince',
-    		get_string('checkforactivity', 'block_course_report'),
-    		get_string('checkforactivity_help', 'block_course_report'),
+    $settings->add(new admin_setting_configselect('block_custom_reports/activitysince',
+    		get_string('checkforactivity', 'block_custom_reports'),
+    		get_string('checkforactivity_help', 'block_custom_reports'),
     		'sincestart',
     		$options)
     		);

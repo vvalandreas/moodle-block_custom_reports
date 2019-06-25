@@ -15,17 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Form for editing course_report block instances.
+ * Form for editing custom_reports block instances.
  *
- * @package   block_course_report
+ * @package   block_custom_reports
  * @copyright 1999 onwards Martin Dougiamas (http://dougiamas.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-class block_course_report extends block_base {
+class block_custom_reports extends block_base {
 
     function init() {
-        $this->title = get_string('pluginname', 'block_course_report');
+        $this->title = get_string('pluginname', 'block_custom_reports');
     }
 
     function has_config() {
@@ -37,7 +37,7 @@ class block_course_report extends block_base {
     }
 
     function specialization() {
-        $this->title = isset($this->config->title) ? format_string($this->config->title) : format_string(get_string('defaulttitle', 'block_course_report'));
+        $this->title = isset($this->config->title) ? format_string($this->config->title) : format_string(get_string('defaulttitle', 'block_custom_reports'));
     }
 
     function instance_allow_multiple() {
@@ -56,7 +56,7 @@ class block_course_report extends block_base {
         $this->content->footer = '';
         
         // get the block renderer
-        $renderer = $PAGE->get_renderer('block_course_report');
+        $renderer = $PAGE->get_renderer('block_custom_reports');
         
         // get example report link
         $this->content->text = $renderer->get_report_link($COURSE->id);

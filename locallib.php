@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * course_report library
+ * custom_reports library
  *
- * @package    block_course_report
+ * @package    block_custom_reports
  * @author     Ian Wild
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL
  * @copyright  (C) 1999 onwards Martin Dougiamas  http://dougiamas.com
@@ -31,7 +31,7 @@ define('CR_COURSE_NOT_STARTED', 1);
 define('CR_NO_LOG_READER_ENABLED', 2);
 define('CR_NO_LOG_ENTRIES', 3);
 
-function course_report_get_views($courseid) {
+function custom_reports_get_views($courseid) {
 	global $DB;
 	
 	$course = get_course($courseid);
@@ -40,7 +40,7 @@ function course_report_get_views($courseid) {
 	$error = CR_SUCCESS;
 	
 	// Get global settings.
-	$activitysince = get_config('block_course_report', 'activitysince');
+	$activitysince = get_config('block_custom_reports', 'activitysince');
 	if ($activitysince === false) {
 		$activitysince = 'sincestart';
 	}
@@ -164,7 +164,7 @@ function course_report_get_views($courseid) {
 				$activity->name = $name;
 			}
 		} else {
-			$activity->name = get_string('unknownmod', 'block_course_report');
+			$activity->name = get_string('unknownmod', 'block_custom_reports');
 		}
 	}
 	

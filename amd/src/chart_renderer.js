@@ -18,9 +18,9 @@
  *
  * Manages the UI.
  *
- * @module     block_course_report/chart_renderer
+ * @module     block_custom_reports/chart_renderer
  * @class      chart_renderer
- * @package    block_course_report
+ * @package    block_custom_reports
  * @copyright  2017 Ian Wild
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @since      3.1
